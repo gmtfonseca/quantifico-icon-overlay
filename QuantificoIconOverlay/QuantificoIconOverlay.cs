@@ -36,8 +36,8 @@ namespace QuantificoIconOverlay
 
         public bool IsRunning()
         {
-            Process[] appProcesss = Process.GetProcessesByName(AppName);
-            return appProcesss.Length > 0;
+            Process[] appProcesses = Process.GetProcessesByName(AppName);
+            return appProcesses.Length > 0;
         }
     }
 
@@ -121,9 +121,9 @@ namespace QuantificoIconOverlay
             byte[] bytes = System.IO.File.ReadAllBytes(blacklistedFilePath);
             object result = unpickler.loads(bytes);
 
-            Hashtable set = (Hashtable)result;
+            Hashtable dict = (Hashtable)result;
             var fileAttributes = new FileInfo(FilePath);
-            return set.ContainsKey(fileAttributes.Name);
+            return dict.ContainsKey(fileAttributes.Name);
         }
     }
 
