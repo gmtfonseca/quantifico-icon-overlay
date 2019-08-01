@@ -122,8 +122,8 @@ namespace QuantificoIconOverlay
             object result = unpickler.loads(bytes);
 
             Hashtable dict = (Hashtable)result;
-            var fileAttributes = new FileInfo(FilePath);
-            return dict.ContainsKey(fileAttributes.Name);
+            FileInfo fileInfo = new FileInfo(FilePath);
+            return dict.ContainsKey(fileInfo.Name);
         }
     }
 
